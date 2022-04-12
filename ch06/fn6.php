@@ -9,7 +9,7 @@
     {
         for($i=1; $i<=$star; $i++)
         {
-            print_star($i);
+            print_star($i);//밑의 for의 범위 값에 변수를 준거다
             print "<br>";
         }
        // 이거 이해 해보기
