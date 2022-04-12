@@ -13,7 +13,7 @@
     $score2[0] = 100;
 
     print_r($score);
-    print "<br>";
+    print "<br>";// 깊은복사로 인해 둘은 형태가 같을 뿐 별개이므로 변하지 않는다
     print_r($score2);
     print "<br>";
 ?>

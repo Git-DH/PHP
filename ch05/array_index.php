@@ -7,11 +7,10 @@
     print "<br>";
     print "count : " . count($numbers) . "<br>";
     for($i=0; $i<count($numbers); $i++)
-    //count는 4이기 때문에 5와 6의 값은 표시를 못 한다
     {
         print $numbers[$i] . "<br>";
     }
-    print "-- 끝 --<br>";
+    print "-- 끝 --";
 
     foreach($numbers as $key => $val)
     {

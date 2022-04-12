@@ -22,6 +22,9 @@
     print "<br>";
     print "copy : ";
     print_r($copy_arr_1);
+    print "<br>";
+    print "origin : ";
+    print_r($arr_age);// 깊은복사로인해 영향을 받지 않았다
     print "<br> ------------------ <br>";
 
     //키정렬
@@ -38,6 +41,8 @@
     print_r($copy_arr_2);
     print "<br>";
 
+    //키값이 유지 돼야 한다면
+    // asort , arsort를 쓰면 된다
     
 
 ?>

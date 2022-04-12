@@ -21,7 +21,7 @@
         $symbol = "";
         $val_1 = intval($score / 10); // floor사용도 가능
         // 일정한 값으로 나누어 구분하고 거기에다가 코드를 적용시킴   
-        // intval로 변수를 정수화 하여 10으로 나누고 정수 값 만 구했다
+        // intval로 변수를 10으로 바꾸고 정수 값 만 구했다
         switch($val_1) 
         {
             case 10: case 9:
@@ -52,5 +52,5 @@
         print $sign . $symbol;
     }
     // else if는 무한대로 가능하지만 순서대로 실행되고 가장 빨리 만나는 true값만 실행
-    // else if : if안에 참 조건을 추가 가능
+    // else if if안에 참 조건을 추가 가능
 ?>
