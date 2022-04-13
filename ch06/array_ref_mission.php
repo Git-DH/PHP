@@ -4,7 +4,7 @@
     plus_array($arr, 10);
     print_r($arr);
 
-    function plus_array(&$arr, $val)
+    function plus_array(&$arr, $val)// referance 방식
     {
         foreach($arr as $k => $v)
         {

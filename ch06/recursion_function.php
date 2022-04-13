@@ -24,7 +24,7 @@
     }
 
     $num = 6;
-    $result = factorial_rec($num); // 3 x 2 x 1
+    $result = factorial_rec($num); 
     print "${num} ! = $result <br>";
     
     for($i=1; $i<=10; $i++)
