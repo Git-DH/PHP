@@ -1,7 +1,7 @@
 <?php
     $mon = rand(0, 15);
 
-    $season = get_season($mon);
+    $season = get_season($mon);//리턴값이 들어간다
 
     if($season) {print "${mon}월은 ${season}입니다.";}
     else {print "${mon}월은 잘못된 값";}
