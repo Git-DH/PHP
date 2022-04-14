@@ -5,7 +5,7 @@
     function multi()
     {
         print "count : " . count(func_get_args()) . "<br>";
-        print "[0] : " . func_get_args()[1] . "<br>";
+        print "[1] : " . func_get_args()[1] . "<br>";
     }
 
     multi(2, 10);

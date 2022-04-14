@@ -15,7 +15,6 @@
     <table>
     <?php
     $val = rand(2, 5);
-
     print_table($val);
 
     function print_table($val)

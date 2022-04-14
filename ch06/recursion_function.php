@@ -23,14 +23,25 @@
             // $num x (n-1)!의 식과 같다
     }
 
-    $num = 6;
-    $result = factorial_rec($num); 
+    function my_Abs($val)
+    {
+       if($val < 0) {return -$val;}
+       return $val;
+
+       //return $val < 0 ? -$val : $val;
+       //if문 사용시에는 삼항식의 사용방법도 고민 해보기
+    }
+    print "my_Abs(-3) : " . my_Abs(-3) . "<br>";
+    print "my_Abs(3) : " . my_Abs(3) . "<br>";
+
+    $num = 3;
+    $result = factorial_rec($num); // 3 x 2 x 1
     print "${num} ! = $result <br>";
     
-    for($i=1; $i<=10; $i++)
+   /* for($i=1; $i<=10; $i++)
     {
         print "factorial($i) = " .  factorial($i) . "<br>";
     }
-
+    */
 
 ?>
