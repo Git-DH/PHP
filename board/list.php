@@ -3,9 +3,8 @@
 
     $conn = get_conn();
     $sql = "SELECT i_board, title, create_at FROM t_board ORDER BY i_board DESC";
-            //(셀렉트 문은 데이터 베이스 자료가 넘어온다)
     $result = mysqli_query($conn, $sql);// 쿼리문 실행
-            // mysqli_query(연결지정, 쿼리문자열 지정)
+            // (셀렉트 문은 데이터 베이스 자료가 넘어온다)
     mysqli_close($conn);//닫는거 잊으면 안됨
     // 원하는 결과물을 다 가져왔기 때문에 위에서 닫아도 된다
 
@@ -29,8 +28,7 @@
         </tr>
         <?php
             while($row = mysqli_fetch_assoc($result))
-            {//  리절트 셋(result set)에서 레코드를 1개씩 리턴해주는 함수
-             // mysqli_fetch_assoc를 반복 시키기 위해 while문을 사용
+            {// mysqli_fetch_assoc를 반복 시키기 위해 while문을 사용
              // 실행 할때마나 데이터 베이스의 첫번째 줄부터 순서대로 실행
              // $row에 배열로 들어가고 컬럼명(i_board등)을 키값으로 잡는다   
                 $i_board = $row['i_board'];
@@ -42,7 +40,12 @@
                 print "<td>${create_at}</td>";
                 print "</tr>";
             }
-            // 쿼리스트링 :  물음표 뒤에 = 로 연결된 key value pair 부분)을 url 뒤에 덧붙여서 추가적인 정보를 서버 측에 전달하는 것이다. 클라이언트가 어떤 특정 리소스에 접근하고 싶어하는지 정보를 담는다.
+            /*
+            쿼리스트링
+            물음표 뒤에 = 로 연결된 key value pair 부분)을 
+            url 뒤에 덧붙여서 추가적인 정보를 서버 측에 전달하는 것이다. 
+            클라이언트가 어떤 특정 리소스에 접근하고 싶어하는지 정보를 담는다.
+            */
         ?>
     </table>
 </body>

@@ -17,10 +17,15 @@
         print "<br>";
     }
 
-    while(list($key, $var) = ($GLOBALS))
+    $arr = array(
+        "name" => "홍길동",
+        "age" => 20, 
+        "height" => 160.6
+    );
+    foreach($arr as $key => $var)
     {
         print $key . " : ";
-        print_r($var);
+        print $var;
         print "<br>";
     }
 

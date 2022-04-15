@@ -1,5 +1,5 @@
 <?php
-    $seoul = getdate();
+    $seoul = getdate();//배열을 준다
 
 
     print "현재시간 : ". 

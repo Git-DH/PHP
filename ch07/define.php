@@ -10,4 +10,10 @@
     print NAME;
     print NAME2;
     print STAND_AGE;
+    print "--------<br>";
+
+    function fn1()
+    {
+        print "fn1 : " . NAME . "<br>";
+    }
 ?>
