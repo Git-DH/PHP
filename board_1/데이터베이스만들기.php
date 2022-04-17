@@ -1,6 +1,6 @@
-<!--
-<DB> - HeidiSQL에 불러올 데이터 베이스와 테이블을 만들어야 한다
 
+<DB> - HeidiSQL에 불러올 데이터 베이스와 테이블을 만들어야 한다
+<!--
 define("URL", "url명");
 define("USERNAME", "ID");
 define("PASSWORD", "PASSWORD");
@@ -26,9 +26,10 @@ method="post"를 사용하기 위해서는 form태그가 필요하다
         <input type="reset" value="초기화">
     </div>
 </form>
+-->
 
 <write_proc>-insert문
-
+<!--
 include_once "db.php" / db파일을 가져온다
 
 $title = $_POST["title"] / post형식으로 내보낸다
@@ -51,10 +52,11 @@ mysqli_close($conn); // 연결닫기
 print "result : $result <br>";
 header("Location: list.php")/ 리다이렉트: 실행시 연결된 링크로 이동
 / header함수가 활성화 되어 있으면 write_proc의 print문이 실행되지 않음
-/ print문을 확인하고 싶을시 비활성화 시켜야함
+/ print문을 확인하고 싶을시 비활성화 시켜야함\
+-->
 
 <list>-select문
-
+<!--
 include_once "db.php";
 
 $conn = get_conn();
@@ -92,12 +94,12 @@ mysqli_close($conn);//닫는거 잊으면 안됨
             }
         >
     </table>
-
+-->
 -------------
 
 <detail>-select문 추가설정
 /list파일에서 내용을 확인하고 수정, 삭제가 가능하도록 만든 페이지
-
+<!--
 include_once 'db.php';
 
 $i_board = $_GET['i_board'];
@@ -123,4 +125,71 @@ $i_board = $_GET['i_board'];
     <div>작성일시 : <?= $create_at ?></div>
     <div>내용 : <?= $ctnt ?></div>
     / php 축약형
+-->
+
+<mod>-글수정 페이지 작성
+<!--
+include_once "db.php";
+$i_board = $_GET['i_board'];
+$sql = "SELECT title, ctnt, FROM t_board WHERE i_board = $i_board";
+
+$conn = get_gonn();
+$result = mysqli_query($conn, $sql);
+mysqli_close($conn);
+
+if($row = mysqli_fetch_assoc($result))
+{
+    $title = $row['title'];
+    $ctnt = $row['ctnt'];
+}
+
+*html
+<h1>글수정</h1>
+    <a href="detail.php?i_board=<?=$i_board?>"><button>글로 이동</button></a>
+    <form action="mod_proc.php" method="post">
+        디테일, 수정, 삭제는 무조건 pk값이 있어야 한다
+        <input type="hidden" name="i_board" value="<?=$i_board?>">
+        <div><input type="text" name="title" placeholder="제목" value="<?=$title?>"></div>
+        <div><textarea name="ctnt" placeholder="내용"><?=$ctnt?></textarea></div>
+        <div>
+            <input type="submit" value="글수정">
+            <input type="reset" value="초기화">
+        </div>
+    </form>
+-->
+
+<mod_proc>-update문
+<!--
+include_once "db.php";
+
+$i_board = $_POST['i_board'];
+$title = $_POST['title'];
+$ctnt = $_POST['ctnt'];
+
+$sql = "
+UPDATE t_board 
+SET title = '$title',
+ctnt = '$ctnt',
+mod_at = now()
+WHERE i_board = $i_board";
+
+$conn = get_conn();
+$result = mysqli_query($conn, $sql);
+mysqli_close($conn);
+header( "Location: detail.php?i_board=${i_board}" );
+//쿼리스트링: 주소값?key값=value
+//바뀌는 값이 들어 가야하는 곳에 적어줘야한다
+//get방식은 퀴리스트링밖에 못 준다
+-->
+
+<del_proc>- delete문
+<!--
+include_once "db.php";
+
+$conn = get_conn();
+$i_board = $_GET['i_board'];
+    $sql = "DELETE FROM t_board WHERE i_board = $i_board";
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    hearder('Location: list.php');
 -->
