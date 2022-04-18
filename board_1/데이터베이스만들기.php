@@ -30,10 +30,10 @@ method="post"를 사용하기 위해서는 form태그가 필요하다
 
 <write_proc>-insert문
 <!--
-include_once "db.php" / db파일을 가져온다
+include_once "db.php"; / db파일을 가져온다
 
-$title = $_POST["title"] / post형식으로 내보낸다
-$ctnt = $_POST["ctnt"]
+$title = $_POST["title"]; / post형식으로 내보낸다
+$ctnt = $_POST["ctnt"];
 
 print "title : $title <br>"; / 확인용 print
 print "title : $ctnt <br>";
@@ -191,5 +191,5 @@ $i_board = $_GET['i_board'];
     $sql = "DELETE FROM t_board WHERE i_board = $i_board";
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
-    hearder('Location: list.php');
+    hearder("Location: list.php");
 -->
