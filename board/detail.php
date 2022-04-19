@@ -24,6 +24,7 @@
         $title = $row['title'];
         $ctnt = $row['ctnt'];
         $create_at = $row['create_at'];
+        $mod_at =$row['mod_at'];
     }
     // list 파일과 detail파일이 차이점을 알아야한다
 ?>
@@ -41,8 +42,9 @@
     <a href="mod.php?i_board=<?=$i_board?>"><button>수정</button></a>
     <!-- 어떤걸 삭제 하고 싶은지 추가 해줘야 한다 -->
     <div>제목 : <?= $title ?></div>
-    <div>작성일시 : <?= $create_at ?></div>
     <div>내용 : <?= $ctnt ?></div>
+    <div>작성일시 : <?= $create_at ?></div>
+    <div>수정일시 : <?= $mod_at ?></div>
     <!-- 출력 축약형 -->
 </body>
 </html>
