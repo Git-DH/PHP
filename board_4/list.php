@@ -17,12 +17,12 @@
 </head>
 <body>
     <h1>리스트</h1>
-    <a href="write.php"><button>글작성</button></a>
+    <a href="write.php"><button>글쓰기</button></a>
     <table>
         <tr>
             <th>번호</th>
             <th>제목</th>
-            <th>작성일시</th>
+            <th>작성일자</th>
         </tr>
         <?php
             while($row = mysqli_fetch_assoc($result))
@@ -31,9 +31,9 @@
                 $title = $row['title'];
                 $create_at = $row['create_at'];
                 print "<tr>";
-                print "<th>${i_board}</th>";
-                print "<th><a href='detail.php?i_board=$i_board'>${title}</a></th>";
-                print "<th>${create_at}</th>";
+                print "<td>${i_board}</td>";
+                print "<td><a href='detail.php?i_board=${i_board}'>${title}</a></td>";
+                print "<td>${create_at}</td>";
                 print "</tr>";
             }
         ?>
