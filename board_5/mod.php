@@ -1,8 +1,8 @@
 <?php
     include_once "db.php";
 
-    $i_board = $_GET['i_board'];
-    $sql = "SELECT title, ctnt FROM t_board WHERE i_board=$i_board";
+    $num = $_GET['num'];
+    $sql = "SELECT title, ctnt, n_name FROM board WHERE num=$num";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
@@ -10,6 +10,7 @@
     {
         $title = $row['title'];
         $ctnt = $row['ctnt'];
+        $n_name = $row['n_name'];
     }
 ?>
 
@@ -22,14 +23,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>글수정</h1>
-    <a href="detail.php?i_board=<?=$i_board?>"><button>글로 이동</button></a>
+<h1>글작성</h1>
+    <a href="detail.php?num=<?=$num?>"><button>게시글</button></a>
     <form action="mod_proc.php" method="post">
-        <input type="hidden" name="i_board" value="<?=$i_board?>">
+        <input type="hidden" name="num" value="<?=$num?>">
         <div><input type="text" name="title" placeholder="제목" value="<?=$title?>"></div>
         <div><textarea name="ctnt" placeholder="내용"><?=$ctnt?></textarea></div>
+        <div><input type="text" name="n_name" placeholder="작성자" value="<?=$n_name?>"></div>
         <div>
-            <input type="submit" value="글수정">
+            <input type="submit" value="수정">
             <input type="reset" value="초기화">
         </div>
     </form>

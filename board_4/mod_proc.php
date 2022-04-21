@@ -1,6 +1,6 @@
 <?php
     include_once "db.php";
-
+    
     $i_board = $_POST['i_board'];
     $title = $_POST['title'];
     $ctnt = $_POST['ctnt'];

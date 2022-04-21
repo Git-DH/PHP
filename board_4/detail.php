@@ -1,17 +1,17 @@
 <?php
     include_once "db.php";
-
-   $i_board = $_GET['i_board'];
-   $sql = "SELECT * FROM t_board WHERE i_board=$i_board";
-   $conn = get_conn();
-   $result = mysqli_query($conn, $sql);
-   mysqli_close($conn);
-   if($row = mysqli_fetch_assoc($result))
-   {
-       $title = $row['title'];
-       $ctnt = $row['ctnt'];
-       $create_at = $row['create_at'];
-   }
+    
+    $i_board = $_GET['i_board'];
+    $sql = "SELECT * FROM t_board WHERE i_board=$i_board";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    if($row = mysqli_fetch_assoc($result))
+    {
+        $title = $row['title'];
+        $ctnt = $row['ctnt'];
+        $create_at = $row['create_at'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +28,6 @@
     <a href="del_proc.php?i_board=<?=$i_board?>"><button>삭제</button></a>
     <div>제목: <?=$title?></div>
     <div>내용: <?=$ctnt?></div>
-    <div>작성일자: <?=$create_at?></div>
+    <div>작성일시: <?=$create_at?></div>
 </body>
 </html>

@@ -22,7 +22,7 @@
         <tr>
             <th>번호</th>
             <th>제목</th>
-            <th>작성일자</th>
+            <th>작성일시</th>
         </tr>
         <?php
             while($row = mysqli_fetch_assoc($result))
@@ -32,7 +32,7 @@
                 $create_at = $row['create_at'];
                 print "<tr>";
                 print "<td>${i_board}</td>";
-                print "<td><a href='detail.php?i_board=${i_board}'>${title}</a></td>";
+                print "<td><a href='detail.php?i_board=$i_board'>${title}</a></td>";
                 print "<td>${create_at}</td>";
                 print "</tr>";
             }
