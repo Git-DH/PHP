@@ -15,6 +15,7 @@
 
     $i_board = $_GET['i_board'];
     $sql= " SELECT * FROM t_board WHERE i_board = $i_board";
+    // WHERE절에 pk값이 =과 같이 있으면 하나만 나온다
 
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);

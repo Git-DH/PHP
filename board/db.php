@@ -4,7 +4,7 @@
     define("PASSWORD", "506greendg@");
     define("DB_NAME", "board1");
     
-    function get_conn() 
+    function get_conn()
     {
         return mysqli_connect(URL, USERNAME, PASSWORD, DB_NAME);
         // php와 mysql(mariaDB)를 연결 해주는 코드
