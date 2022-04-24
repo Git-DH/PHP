@@ -10,7 +10,6 @@
     $param = [
         'uid' => $uid,
         'upw' => $upw,
-        'confirm_upw' => $confirm_upw,
         'nm' => $nm,
         'gender' => $gender
     ];
