@@ -7,19 +7,20 @@
 
     $title = $_POST["title"];
     $ctnt = $_POST["ctnt"];
-    print $title;
-    print $ctnt;
+    print $title. "<br>";
+    print $ctnt. "<br>";
 
     $param = [
+        "i_user" => $i_user,
         "title" => $title,
-        "ctnt" => $ctnt,
-        "i_user" => $i_user
+        "ctnt" => $ctnt
     ];
-    print_r($param);
+    print_r($param); //배열의 값과 함수의 값을 출력해서 확인 하는것이 좋다
+
     $result = ins_board($param);
-    print "result : " . $result;
+    print "result : ${result}";
+
     header("Location: list.php");
 
-    
    
     

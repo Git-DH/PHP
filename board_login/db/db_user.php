@@ -9,11 +9,11 @@
 
     $conn = get_conn();
     $sql = 
-    "   INSERT INTO t_user 
-        (uid, upw, nm, gender)
-        VALUES
-        ('$uid', '$upw', '$nm', $gender)
-    ";        
+    "INSERT INTO t_user
+    (uid, upw, nm, gender)
+    VALUES
+    ('$uid', '$upw', '$nm', '$gender')
+    ";
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
     return $result;
@@ -21,13 +21,15 @@
 
  function sel_user($param) {
     $uid = $param["uid"];
-    $sql = 
-    "   SELECT i_user, uid, upw, nm, gender
-        FROM t_user
-        WHERE uid = '$uid'
-    ";
+    $upw = $param["upw"];
+
     $conn = get_conn();
+    $sql = 
+    "SELECT i_user, uid, upw, gender 
+     FROM t_user
+     WHERE uid = $uid
+    ";
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
-    return mysqli_fetch_assoc($result);
+    return $result;
  }
