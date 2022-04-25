@@ -1,17 +1,17 @@
 <?php
     include_once "db/db_user.php";
 
-    $uid = $_POST["uid"];
-    $upw = $_POST["upw"];
-    $confirm_upw = $_POST["confirm_upw"];
-    $nm = $_POST["nm"];
-    $gender = $_POST["gender"];
+    $uid = $_POST['uid'];
+    $upw = $_POST['upw'];
+    $confirm_upw = $_POST['confirm_upw'];
+    $nm = $_POST['nm'];
+    $gender = $_POST['gender'];
 
     $param = [
-        "uid" => $uid,
-        "upw" => $upw,
-        "nm" => $nm,
-        "gender" => $gender
+        'uid' => $uid,
+        'upw' => $upw,
+        'nm' => $nm,
+        'gender' => $gender
     ];
     // 함수 사용 2가지
     // -php내부의 제공 함수 -본인이 만든 함수
