@@ -1,11 +1,13 @@
 <?php
     session_start();
+    $nm = "";
     if(isset($_SESSION["login_user"])){
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
     }
+    include_once "db/db_board.php";
+    $list = sel_board_list();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,16 +24,34 @@
         <?=isset($_SESSION["login_user"]) ? $nm . " 님 환영합니다." : "" ?>
         <div>
             <a href="list.php">리스트</a>
-            <a href="write.php">글쓰기</a>
-            <?=isset($_SESSION["login_user"]) 
-            ? "<a href='logout.php'>로그아웃</a>" 
-            : "<a href='login.php'>로그인</a>" 
-            ?>
+            <?php if(isset($_SESSION["login_user"])){ ?>
+                <a href="write.php">글쓰기</a>
+                <a href='logout.php'>로그아웃</a>
+            <?php } else{ ?>
+                <a href='login.php'>로그인</a>
+           <?php } ?>
         </div>
         </header>
-    </div>
     <main>
-    <h1>리스트</h1>
+        <h1>리스트</h1>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>등록일시</th>
+            </tr>
+            <?php foreach($list as $item)//foreach 공부하기 
+            { ?>
+             <tr> 
+                <td><?=$item["i_board"]?></td>
+                <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
+                <td><?=$item["nm"]?></td>
+                <td><?=$item["create_at"]?></td>
+            </tr>
+            <?php } ?>
+        </table>
     </main>
+    </div>
 </body>
 </html>

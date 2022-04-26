@@ -19,8 +19,10 @@
 
     $result = ins_board($param);
     print "result : ${result}";
-
-    header("Location: list.php");
+    if($result){
+        header("Location: list.php");
+    }
+    
 
    
     
