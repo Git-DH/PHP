@@ -30,7 +30,7 @@
      FROM t_user
      WHERE uid = '$uid'
     ";
-     $conn = get_conn();
+    $conn = get_conn();
     $result = mysqli_query($conn, $sql);// 결과값만 담고 있을 뿐 사용하기 좋은상태는 아님
     mysqli_close($conn);
     return mysqli_fetch_assoc($result);// 결과값을 사용할 수 있도록 하는 함수
