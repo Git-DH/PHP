@@ -22,7 +22,3 @@
     if($result){
         header("Location: list.php");
     }
-    
-
-   
-    
