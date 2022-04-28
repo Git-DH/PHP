@@ -19,7 +19,7 @@
         session_start();
         $_SESSION["login_user"] = $result;
         print_r($_SESSION["login_user"]);//로그인 유저에 값이 적용 되었는지 확인용
-        header("Location: write.php");
+        header("Location: list.php");
     }else {
         header("Location: login.php");
     }

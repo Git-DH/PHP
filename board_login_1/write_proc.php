@@ -14,7 +14,7 @@
         "ctnt" => $ctnt,
     ];
 
-    $result = ins_user($param);
+    $result = ins_board($param);
     print "result : ${result}";
     if($result) {
         header("Location: list.php");
