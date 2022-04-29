@@ -4,7 +4,7 @@
     $login_user = $_SESSION["login_user"];
 
     $i_board = $_POST["i_board"];
-    $titel = $_POST["title"];
+    $title = $_POST["title"];
     $ctnt = $_POST["ctnt"];
     $i_user = $login_user["i_user"];
 

@@ -22,7 +22,7 @@
     <div><a href="list.php">리스트</a></div>
     <?php if(isset($_SESSION["login_user"]) && $login_user["i_user"] === $item["i_user"]) {?>
         <div>
-            <a href="mod.php?i_board=<?$i_board?>"><button>수정</button></a>
+            <a href="mod.php?i_board=<?=$i_board?>"><button>수정</button></a>
             <button onclick="isDel();">삭제</button>
         </div>
     <?php } ?>
