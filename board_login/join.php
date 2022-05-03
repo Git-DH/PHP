@@ -8,7 +8,7 @@
 </head>
 <body>
    <h1>회원가입</h1>
-   <a href="ligin.php">로그인</a>
+   <a href="login.php">로그인</a>
     <form action="join_proc.php" method="post">
         <div><input type="text" name="uid" placeholder="아이디"></div>
         <div><input type="password" name="upw" placeholder="비밀번호"></div>
