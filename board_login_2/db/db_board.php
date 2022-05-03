@@ -33,3 +33,19 @@
         mysqli_close($conn);
         return $result;
     }
+
+    function sel_board($param) {
+        $i_board = $param["i_board"];
+
+        $sql = 
+        "SELECT A.i_board, A.title, A.create_at, A.i_user, B.nm, A.ctnt
+         FROM t_board A
+         INNER JOIN t_user B
+         ON A.i_user = B.i_user
+         WHERE A.i_board = '$i_board'
+        ";
+        $conn = get_conn();
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        return mysqli_fetch_assoc($result);
+    }
