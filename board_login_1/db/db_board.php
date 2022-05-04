@@ -94,3 +94,39 @@
         mysqli_close($conn);
         return $result;
     }
+
+    function search_board(&$param) {
+        $conn = get_conn();
+        $search_select = $param['search_select'];
+        $search_input_txt = $param['search_input_txt'];
+        $textArray = explode(" ",$search_input_txt);
+        $where = "B.nm";
+        $qurey = "SELECT A.i_board, A.title, A.create_at, B.nm 
+        FROM t_board A
+        INNER JOIN t_user B
+        ON A.i_user = B.i_user
+        WHERE ";
+
+        switch($search_select) {
+            case "search_writer":
+                $where = "B.nm";
+                break;
+            case "search_title":
+                $where = "A.title";
+                break;
+            case "search_ctnt":
+                $where = "A.ctnt";
+                break;
+            default:
+        }
+
+        for ($i=0; $i<count($textArray); $i++) {
+            $qurey = $qurey. " $where LIKE '%$textArray[$i]%' ";
+            if($i !== count($textArray)-1){
+                $qurey = $qurey. "OR";
+            }
+        }
+        $result = mysqli_query($conn, $qurey);
+        mysqli_close($conn);
+        return $result;
+    }

@@ -2,10 +2,9 @@
  include_once "db/db_board.php";
  session_start();
  $nm = "";
- $page = $_GET["page"];
- if(!$page) { 
-    $page = 1;
-} else {
+
+ $page = 1;
+ if(isset($_GET["page"])) { 
     $page = intval($page);// 문자열을 정수형으로 바꿔주는 함수
 }
  if(isset($_SESSION["login_user"])) {
@@ -19,6 +18,15 @@
 ];
  $paging_count = sel_paging_count($param);
  $list = sel_board_list($param);
+
+ if(isset($_POST['search_input_txt']) && $_POST['search_input_txt'] != ""){
+     $param += [
+        "search_select" => $_POST["search_select"],
+        "search_input_txt" => $_POST["search_input_txt"]
+     ];
+     // DB조회 전달 후 결과 list를 받아온다
+     $list = search_board($param);
+ }
  ?>
 
  <!DOCTYPE html>
@@ -68,6 +76,19 @@
                 <span class="num"><a href="list.php?page=<?=$i?>"><?=$i?></a></span>
             <?php } ?>
         </div>
+        <form action="list.php" method="POST">
+        <div>
+            <select name="search_select">
+                <option value="search_writer">작성자</option>
+                <option value="search_title">제목</option>
+                <option value="search_ctnt">제목+내용</option>
+            </select>
+            <div>
+                <input type="text" name="search_input_txt">
+                <input type="submit" value="검색">
+            </div>
+        </div>
+        </form>
          </main>
          </div>
  </body>
