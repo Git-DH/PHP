@@ -26,7 +26,7 @@
    // uid로 먼저 id값 체크하기 위해
    
     $sql = 
-    "SELECT i_user, uid, upw, nm, gender 
+    "SELECT i_user, uid, upw, nm, gender, profile_img 
      FROM t_user
      WHERE uid = '$uid'
     ";
@@ -35,4 +35,15 @@
     mysqli_close($conn);
     return mysqli_fetch_assoc($result);// 결과값을 사용할 수 있도록 하는 함수
     // 결과 값을 가지고 호출한 곳으로 돌아감
+ }
+
+ function upd_profile_img(&$param) {
+   $sql = " UPDATE t_user 
+            SET profile_img = '{$param["profile_img"]}' 
+            WHERE i_user = {$param["i_user"]}
+            ";
+   $conn = get_conn();
+   $result = mysqli_query($conn, $sql);
+   mysqli_close($conn);
+   return $result;
  }

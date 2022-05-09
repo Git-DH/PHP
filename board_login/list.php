@@ -2,12 +2,11 @@
     include_once "db/db_board.php";
     session_start();
     $nm = "";
-    $page = $_GET["page"];
-    if(!$page) { 
-        $page = 1;
-    } else {
-        $page = intval($page);// 문자열을 정수형으로 바꿔주는 함수
-    }
+    
+    $page = 1;
+ if(isset($_GET["page"])) { 
+    $page = intval($page);// 문자열을 정수형으로 바꿔주는 함수
+}
     //print "page : " . $page;
     if(isset($_SESSION["login_user"])){
         $login_user = $_SESSION["login_user"];
@@ -40,6 +39,7 @@
             <?php if(isset($_SESSION["login_user"])){ ?>
                 <a href="write.php">글쓰기</a>
                 <a href='logout.php'>로그아웃</a>
+                <a href="profile.php">프로필</a>
             <?php } else{ ?>
                 <a href='login.php'>로그인</a>
            <?php } ?>
