@@ -12,7 +12,7 @@
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
     }
-    $row_count = 20;
+    $row_count = 15;
     $param = [
         "row_count" => $row_count,
         "start_idx" => ($page -1) * $row_count
@@ -33,13 +33,22 @@
 <body>
     <div id="container">
         <header>
-        <?=isset($_SESSION["login_user"]) ? $nm . " 님 환영합니다." : "" ?>
         <div>
+        <?=isset($_SESSION["login_user"]) ? $nm . " 님 환영합니다." : "" ?>
             <a href="list.php">리스트</a>
             <?php if(isset($_SESSION["login_user"])){ ?>
                 <a href="write.php">글쓰기</a>
                 <a href='logout.php'>로그아웃</a>
-                <a href="profile.php">프로필</a>
+                <a href="profile.php">
+                    프로필
+                    <?php
+                        $session_img = $_SESSION["login_user"]["profile_img"];
+                        $profile_img = $session_img == null ? "basic.jpg" : $_SESSION["login_user"]["i_user"]. "/" . $session_img;
+                    ?>
+                    <div class="circular__img wh40">
+                        <img src="/board_login/img/profile/<?=$profile_img?>"width="100">
+                    </div>
+                </a>
             <?php } else{ ?>
                 <a href='login.php'>로그인</a>
            <?php } ?>
@@ -59,7 +68,15 @@
              <tr> 
                 <td><?=$item["i_board"]?></td>
                 <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
-                <td><?=$item["nm"]?></td>
+                <td><?=$item["nm"]?>
+                <?php
+                        $session_img = $item["profile_img"];
+                        $profile_img = $session_img == null ? "basic.jpg" : $item["i_user"]. "/" . $session_img;
+                    ?>
+                    <div class="circular__img wh40">
+                        <img src="/board_login/img/profile/<?=$profile_img?>"width="100">
+                    </div>
+                </td>
                 <td><?=$item["create_at"]?></td>
             </tr>
             <?php } ?>

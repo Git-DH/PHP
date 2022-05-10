@@ -10,6 +10,7 @@
     <div>프로필 이미지 디스플레이</div>
     <form action="profile_proc.php" method="post" enctype="multipart/form-data">
         <div><label>이미지 : <input type="file" name="img" accept="image/*"></label></div>
+        <!--accept="image/*"는 파일선택 창에서 이미지 확장자 파일만 보이도록 하는 것-->
         <div><input type="submit" value="이미지 업로드"></div>
     </form>
 </body>
