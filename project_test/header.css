@@ -1,0 +1,18 @@
+body {
+    height: 100%;
+}
+
+.cotainer {
+    border: 1px solid #000;
+    border-radius: 1px;
+    display: grid;
+}
+
+.item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    background-color: rgb(12, 128, 46);
+}
