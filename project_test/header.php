@@ -10,6 +10,7 @@
 <body>
     <div class="container">
         <div class="item">우리동네미술관</div>
+        <!--햄버거 아이콘 로그인 회원가입은 헤더안에 넣기 -->
     </div>
 </body>
 </html>

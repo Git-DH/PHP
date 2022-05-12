@@ -1,9 +1,9 @@
 <?php
     include_once "db/db_show.php";
 
-    $g_num = $_GET["g_num"];//get값을 어디서 받는지 확인
+    $g_num = $_GET["gal_id"];//get값을 어디서 받는지 확인
     $param = [
-        "g_num" => $g_num
+        "gal_id" => $gal_id
     ];
     $result = sel_show($param);
     print_r($param);
@@ -18,7 +18,7 @@
     <title>show</title>
 </head>
 <body>
-    <div><?=$reslut["g_num"]?></div>
+    <div><?=$reslut["gal_id"]?></div>
     <?php include_once "header.php" ?>
 </body>
 </html>

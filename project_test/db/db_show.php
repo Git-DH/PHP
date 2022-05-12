@@ -2,14 +2,14 @@
     include_once "db.php";
 
     function sel_show(&$param){
-        $g_num = $param["g_num"];
+        $gal_id = $param["gal_id"];
 
         $sql = 
-            "SELECT A.g_num 
+            "SELECT A.gal_id, A.s_id, A.s_nm, A.
              FROM show_t A
              INNER JOIN galley_t B
-             ON A.g_num = B.g_num
-             WHERE A.g_num = $g_num
+             ON A.gal_id = B.gal_id
+             WHERE A.gal_id = $gal_id
             ";
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);

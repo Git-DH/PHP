@@ -16,3 +16,34 @@ body {
     color: rgb(255, 255, 255);
     background-color: rgb(12, 128, 46);
 }
+
+table { width: 100%;}
+
+th, td {
+    border: 1px solid #000;
+    border-radius: 1px;
+}
+
+.mid td {
+    box-sizing: border-box;
+    color: white;
+}
+
+.post1 {
+    background-image: url(https://kiramonthly.com/wp-content/uploads/2020/02/1.jpg) ;
+    width: 300px; height: 300px;
+    text-align: center;
+    background-size: cover;
+}
+.post2 {
+    background-image: url(https://kiramonthly.com/wp-content/uploads/2020/02/1.jpg) ;
+    width: 300px; height: 300px;
+    text-align: center;
+    background-size: cover;
+}
+.post3 {
+    background-image: url(https://kiramonthly.com/wp-content/uploads/2020/02/1.jpg) ;
+    width: 300px; height: 300px;
+    text-align: center;
+    background-size: cover;
+}
