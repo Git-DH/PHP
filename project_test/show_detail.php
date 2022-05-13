@@ -1,24 +1,58 @@
 <?php
     include_once "db/db_show.php";
-
-    $g_num = $_GET["gal_id"];//get값을 어디서 받는지 확인
-    $param = [
-        "gal_id" => $gal_id
-    ];
-    $result = sel_show($param);
-    print_r($param);
+    
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>show</title>
+    <link rel="stylesheet" href="css/show_detail.css">
+    <title>show_detail</title>
 </head>
 <body>
-    <div><?=$reslut["gal_id"]?></div>
-    <?php include_once "header.php" ?>
+    <?php include_once "header_1.php"; ?>
+    <div id="container">
+        <div class="gal_nm">미술관 이름</div> <!-- 미술관 번호로 이름 가져오기 -->
+        <table>
+            <!-- html작성 후 db 값 가져오기 -->
+            <tr>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+            </tr><tr>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+                <th>전시이름</th>
+            </tr>
+            <tr>
+                <td>전시시작일</td>
+                <td>전시시작일내용</td>
+                <td>전시시작일내용</td>
+                <td>전시종료일</td>
+                <td>전시종료일내용</td>
+                <td>전시종료일내용</td>
+            </tr>
+            <tr>
+                <td>전시개요</td>
+                <td>전시개요</td>
+                <td>전시개요</td>
+                <td>전시개요</td>
+                <td>전시개요</td>
+                <td>전시개요</td>
+            </tr>
+        </table>
+        <div>전시사진1</div>
+        <div>전시사진2</div>
+        <div>전시사진3</div><!-- 이미지 링크 받아오기 -->
+    </div>
+    <?php include_once "footer.php"; ?>
 </body>
 </html>

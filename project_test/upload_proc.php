@@ -1,7 +1,7 @@
 <?php
 include_once "db/db_board.php";
 session_start();
-define("FILE_PATH", "../img/");
+define("FILE_PATH", "img/");
 
 $login_user= &$_SESSION["login_user"];
 $s_id= 1;
