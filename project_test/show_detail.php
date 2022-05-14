@@ -18,35 +18,19 @@
         <table>
             <!-- html작성 후 db 값 가져오기 -->
             <tr>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-            </tr><tr>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
-                <th>전시이름</th>
+                <th rowspan="2" colspan="6">전시이름</th>
+            </tr>
+            <tr>
             </tr>
             <tr>
                 <td>전시시작일</td>
-                <td>전시시작일내용</td>
-                <td>전시시작일내용</td>
+                <td colspan="2">전시시작일내용</td>
                 <td>전시종료일</td>
-                <td>전시종료일내용</td>
-                <td>전시종료일내용</td>
+                <td colspan="3">전시종료일내용</td>
             </tr>
             <tr>
                 <td>전시개요</td>
-                <td>전시개요</td>
-                <td>전시개요</td>
-                <td>전시개요</td>
-                <td>전시개요</td>
-                <td>전시개요</td>
+                <td colspan="4">전시개요</td>
             </tr>
         </table>
         <div>전시사진1</div>
