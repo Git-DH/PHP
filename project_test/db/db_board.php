@@ -33,3 +33,19 @@ function ins_img(&$param) {
    mysqli_close($conn);
    return $result;
 }
+
+function sel_show(&$param) {
+   $s_id = $param['s_id'];
+
+   $sql =
+   "SELECT S.s_id, S.gal_id, S.s_nm, S.s_s_date, S.s_e_date, S.s_post
+    FROM show_t S
+    INNER JOIN picture_t P
+    ON S.s_id = P.s_id
+    WHERE S.s_id = $s_id
+   ";
+   $conn = get_conn();
+   $result = mysqli_query($conn, $sql);
+   mysqli_close($conn);
+   return mysqli_fetch_assoc($result);
+}
