@@ -1,5 +1,5 @@
 <?php
-    include_once "db/db_show.php";
+    include_once "db/db_board.php";
     
 ?>
 <!DOCTYPE html>
