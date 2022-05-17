@@ -34,6 +34,19 @@
         return $result;
     }
 
+    function sel_paging_count($param) {//한 페이지에 몇개씩 표시할지 정하는 함수
+        $row_count = $param["row_count"];
+        $sql = 
+        "SELECT CEIL(COUNT(i_board) / $row_count) as cnt
+         FROM t_board
+        ";
+        $conn = get_conn();
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        $row = mysqli_fetch_assoc($result);
+        return $row["cnt"];
+    }
+
     function sel_board($param) {
         $i_board = $param["i_board"];
 
