@@ -4,7 +4,7 @@ session_start();
 define("FILE_PATH", "img/");
 
 $login_user= &$_SESSION["login_user"];
-$s_id= 1;
+$s_id = $_POST['s_id'];
 
 // var_dump($_FILES);
 

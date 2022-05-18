@@ -7,17 +7,18 @@
     <title>Upload</title>
 </head>
 <body>
-    <?php include_once "header_1.php" ?>
+    <?php include_once ("header_1.php") ?>
     <div id="container">
     <div><h3>Upload</h3></div>
     <form action="upload_proc.php" method="post" enctype="multipart/form-data">
         <div><label>img : <input type="file" name="pic_img" accept="img/*"></label></div>
+        <div><label>s_id : <input type="text" name="s_id"></label></div>
         <div><input type="submit" value="upload"></div>
     </form>
     <div>
-        <br><a href="../project_test/index.php">←메인</a>        
+        <br><a href="index.php">←메인</a>        
     </div>
     </div>
-    <?php include_once "footer.php" ?>
+    <?php include_once ("footer.php") ?>
 </body>
 </html>
