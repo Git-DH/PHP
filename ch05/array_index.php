@@ -6,6 +6,7 @@
     print_r($numbers);
     print "<br>";
     print "count : " . count($numbers) . "<br>";
+    
     for($i=0; $i<count($numbers); $i++)
     {
         print $numbers[$i] . "<br>";

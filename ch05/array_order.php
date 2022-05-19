@@ -24,7 +24,7 @@
     print_r($copy_arr_1);
     print "<br>";
     print "origin : ";
-    print_r($arr_age);// 깊은복사로인해 영향을 받지 않았다
+    print_r($arr_age);// 깊은복사(실제로 같은거 하나 더 생김)로인해 영향을 받지 않았다
     print "<br> ------------------ <br>";
 
     //키정렬
