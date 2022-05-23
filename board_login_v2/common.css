@@ -1,0 +1,27 @@
+* { box-sizing: border-box; padding: 0; margin: 0;}
+html, body { height: 100%; }
+a {text-decoration: none; color: #000; }
+
+#container { display: grid; grid-template-rows: 100px 1fr; min-height: 100vh; }
+#container > header { background-color: rgb(141, 133, 241); display: flex; align-items: center; padding: 10px 20px; }
+
+.selected_page {font-weight: bold; }
+.selected_page > a {color: rgb(231, 13, 13);}
+
+table {margin: auto;}
+th, td {border-bottom: 1px solid #000;}
+th {
+    border-top: 3px solid rgb(138, 125, 141);
+    padding: 5px 20px;
+    text-align: center;
+}
+td {text-align: center;}
+
+h1 {
+    text-align: center;
+}
+
+.num_b {
+    display: flex;
+    justify-content: center;
+}
