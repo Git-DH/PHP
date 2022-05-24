@@ -25,5 +25,6 @@
     <div class="container-xl">100% wide until extra large breakpoint 1200px</div>
     <div class="container-xxl">100% wide until extra extra large breakpoint 1400px</div>
     <div class="container-fluid">container-fluid</div>
+    <!-- 컨테이너 뒤의 문자는 크기에따라 적용된다는 뜻이다. -->
 </body>
 </html>

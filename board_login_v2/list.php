@@ -57,11 +57,11 @@
         </header>
         <main>
             <h1>리스트</h1>
-            <div>
+            <div class="flex">
                 <form action="list.php" method="get">
                     <div>
                         <input type="search" name="search_txt" value="<?=$search_txt?>">
-                        <input type="submit" name="검색">
+                        <input type="submit" value="검색">
                     </div>
                 </form>
             </div>
@@ -78,21 +78,21 @@
                     <?php foreach($list as $item) { ?>
                         <tr>
                             <td><?=$item["i_board"]?></td>
-                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=str_replace("$search_txt", "<mark>{$search_txt}</mark>", $item["title"])?></a></td>
+                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $item["title"])?></a></td>
                             <td><?=$item["nm"]?></td>
                             <td><?=$item["create_at"]?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            <div>
+            <div class="flex">
                 <?php for($i=1; $i<=$paging_count; $i++) { ?>
-                    <div class="num_b">
+                    <span>
                     <span class="<?= $i==$page ? "selected_page" : ""?>">
-                        <a href="list.php?page=<?=$i?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=$i?></a>
+                        <a href="list.php?page=<?=$i?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>" ><?=$i?></a>
                     </span>
-                    </div>
                 <?php } ?>
+                </span>
             </div>
         </main>
     </div>

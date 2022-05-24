@@ -15,6 +15,7 @@
     <!-- 총 12칸으로 되어 있고 col의 갯수 만큼 나눠진다. -->
 <div class="container">
     <!-- 컨테이너 안에 존재해야 한다. -->
+    <!-- 단위없는 클래스는 알아서 비율을 맞춰서 생성된다. -->
   <div class="row">
     <div class="col">
       Column

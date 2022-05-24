@@ -37,7 +37,7 @@
             <button onclick="isDel();">삭제</button>
         </div>
     <?php } ?>
-    <div>제목 : <?=str_replace("$search_txt","<mark>{$search_txt}</mark>", $item["title"])?></div>
+    <div>제목 : <?=str_replace($search_txt,"<mark>{$search_txt}</mark>", $item["title"])?></div>
     <div>글쓴이 : <?=$item["nm"]?></div>
     <div>등록일시 : <?=$item["create_at"]?></div>
     <div><?=$item["ctnt"]?></div>

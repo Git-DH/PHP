@@ -46,7 +46,7 @@
         
         if($param["search_txt"] !== "") {
             $sql .= " WHERE title LIKE '%{$param["search_txt"]}%' ";
-        }
+        } // 검색기능 더 추가하려면 이부분을 더 추가 해줘야 한다
         $sql .= " ORDER BY A.i_board DESC 
                   LIMIT {$param["s_idx"]}, {$param["row_count"]} ";
         $conn = get_conn();
