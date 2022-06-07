@@ -9,6 +9,6 @@
     print "floor(10.9) : " . floor(10.9) . "<br>";
     print "floor(10.01) : " . floor(10.01) . "<br>";
     print "pow(2, 3) : " . pow(2, 3) . "<br>"; //2의 3승
-    print "sqrt(25) : " . sqrt(25) . "<br>"; // 25의 제곱근
+    print "sqrt(25) : " . sqrt(25) . "<br>"; // 25의 제곱근 = 5
 
 ?>

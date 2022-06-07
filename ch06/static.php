@@ -9,7 +9,7 @@
         $z = 1;
         function inc2()
         {
-            global $z;
+            global $z; // 함수 안에서 전역변수를 쓰기위해 global을 쓴다.
             print $z . "<br>";
             $z += 1;
         }

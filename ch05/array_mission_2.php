@@ -18,6 +18,6 @@
         array_push($arr, $val);
       }
   }
-    print_r($arr);
+  print_r($arr);
     // 문제를 구분하여 어디서 부터 해결할지 고민해야 한다.
  
