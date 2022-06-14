@@ -1,7 +1,5 @@
 <?php
 
-use Student as GlobalStudent;
-
 class People {
     protected $name;
     protected $age;
