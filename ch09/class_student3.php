@@ -12,7 +12,7 @@
             print "Name : {$name}<br>";
         }
     }
-    // 멤버필드: 상수는 public으로 가능하고 변수는 은닉화 한다.
+    // 멤버필드(상수, 변수): 상수는 public으로 가능하고 변수는 은닉화 한다.
 
     $obj = new Student;
     // $obj->studentId; 접근하려도 하면 에러 터짐
