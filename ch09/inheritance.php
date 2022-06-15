@@ -35,10 +35,7 @@ class Student extends People {
         print "Student에 있는 print people<br>";
     }
 }
-// 오버라이드: 상속받은 객체 값을 바꾸는 것
-// PHP 클래스에서 오버라이드는(Override) 부모 클래스의 메소드를 재정의 하는 것을 뜻합니다. 
-// 재정의시에는 메소드명과 인자가 동일해야 합니다. 
-// 접근제어자는 같거나 더 많이 허용하는쪽으로 지정할 수 있습니다.
+
 $stu1 = new Student("홍길동", 21, 1010);
 $stu1->printPoeple();
 print "-------------<br>";

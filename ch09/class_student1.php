@@ -25,6 +25,7 @@
     }
 
     $obj = new Student;
+    // 주소값이 들어 간다.
     $obj->studentId = 20171234;
     $obj->studentName = "Alice";
     $obj->printStudent($obj->studentId, $obj->studentName);
