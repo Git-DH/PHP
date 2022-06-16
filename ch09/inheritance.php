@@ -3,7 +3,7 @@
 class People {
     protected $name;
     protected $age;
-    // protected: 상속관계일 경우 클래스를 벗어나도 사용가능
+    // protected: 상속관계일 경우 클래스를 벗어나도 사용가능(상속받은 다른 클래스)
 
     function printPoeple()
     {
