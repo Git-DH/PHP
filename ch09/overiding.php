@@ -1,5 +1,5 @@
 <?php
-
+// 깃허브 보고 고쳐야함
 class Animal {
     function crying() {
         print "동물이 운다.<br>";
