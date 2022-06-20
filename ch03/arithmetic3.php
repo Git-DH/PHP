@@ -1,6 +1,6 @@
 <?php
     // && : true 만들기가 힘듬. fales만들기가 쉬움.
-    // || : fales 만등기가 힘듬. true만들기가 쉬움.
+    // || : fales 만들기가 힘듬. true만들기가 쉬움.
 
     $name = 1;
 
