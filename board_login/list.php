@@ -77,7 +77,7 @@
                         <img src="/board_login/img/profile/<?=$profile_img?>"width="100">
                     </div>
                 </td>
-                <td><?=$item["create_at"]?></td>
+                <td><?=$item["created_at"]?></td>
             </tr>
             <?php } ?>
         </table>

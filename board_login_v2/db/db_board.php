@@ -38,7 +38,7 @@
     }
 
     function sel_board_list(&$param) {
-        $sql = "SELECT A.i_board, A.title, A.create_at
+        $sql = "SELECT A.i_board, A.title, A.created_at
                      , B.nm
                   FROM t_board A
                  INNER JOIN t_user B

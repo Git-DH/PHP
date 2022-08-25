@@ -20,7 +20,7 @@
     if(isset($_GET["search_txt"])) {
         $search_txt = $_GET["search_txt"];
     }
-    print "search_txt : {$search_txt}";
+    // print "search_txt : {$search_txt}";
 
     $row_count = 10;
 
@@ -79,7 +79,7 @@
                             <td><?=$item["i_board"]?></td>
                             <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $item["title"])?></a></td>
                             <td><?=$item["nm"]?></td>
-                            <td><?=$item["create_at"]?></td>
+                            <td><?=$item["created_at"]?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
